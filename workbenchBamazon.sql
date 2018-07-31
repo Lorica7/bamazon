@@ -4,7 +4,7 @@ CREATE database bamazonDB;
 USE bamazonDB;
 
 CREATE TABLE products (
-  id INTEGER(11) NOT NULL AUTO_INCREMENT, 
+  id INTEGER(11) NOT NULL AUTO_INCREMENT , 
   item_name VARCHAR(100) NOT NULL,
   department_name VARCHAR(100) NOT NULL,
   price DECIMAL(20) NOT NULL,
@@ -53,4 +53,6 @@ VALUES ("iPhone", "Computers and Electronics", 1000, 9000);
 
 INSERT INTO products (item_name, department_name, price, stock_quantity)
 VALUES ("Monitor", "Computers and Electronics", 875, 85);
+
+
 
