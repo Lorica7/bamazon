@@ -59,14 +59,16 @@ function displayProducts() {
                 connection.query(query, { id: answer.IDnumber }, function (err, results) {
                     if (err) throw err;
                     console.log(results);
-            
-                    if (results.stock_quantity <= { quantity: answer.quantity }) {
+            console.log(results[0].stock_quantity);
+           console.log(results[0].price);
+           console.log(answer.quantity);
+                    if (results[0].stock_quantity <= answer.quantity) {
                         console.log("I am sorry, we do not have enough items in stock to fulfill your order. Please check again next week.");
                         connection.end();
                     } else {
-                        var total = answer.quantity * results.price;
+                        var total = answer.quantity * results[0].price;
                         console.log(total);
-                        console.log("We have " + results.stock_quantity + "in stock. We can fill your order. Your total is $" + total + " Please check your email for an invoice.");
+                        console.log("We have " + results[0].stock_quantity + " in stock. We can fill your order. Your total is $" + total + " Please check your email for an invoice.");
                     }
                     
                 });
