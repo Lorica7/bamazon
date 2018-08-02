@@ -2,11 +2,6 @@ var mysql = require('mysql');
 var inquirer = require('inquirer');
 require('dotenv').config();
 
-//var port = new MyPort(secret.port);
-//var user = new MyUser(secret.user);
-//var password = new MyPassword(secret.password);
-// SEE WEEK 10 HW for more....need to create .env file and file called "secret"//
-
 var connection = mysql.createConnection({
     host: "localhost",
     port: 8889,
